@@ -54,7 +54,7 @@ This project is a web-based application for managing and viewing movies. It allo
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo-url.git
+   git clone [https://github.com/vrushank-srikar/CinePixel]
    ```
 2. Navigate to the project directory:
    ```bash
@@ -94,18 +94,4 @@ Access the application at `http://localhost:8080`.
 2. Search for movies by title or browse the available options.
 
 ---
-
-## Testing
-
-Currently, no automated tests are included. Add tests using a framework like Mocha or Jest as needed.
-
----
-
-## License
-[Include license details, e.g., MIT License.]
-
----
-
-## Contact
-For inquiries or feedback, please contact [your email or contact information].
 
