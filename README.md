@@ -2,6 +2,8 @@
 A web-based application for managing movies, allowing admins to upload/manage movie details.
 Project Overview
 
+---
+
 # Project Overview
 
 ## Description
@@ -54,7 +56,7 @@ This project is a web-based application for managing and viewing movies. It allo
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/vrushank-srikar/CinePixel]
+   git clone https://github.com/vrushank-srikar/CinePixel
    ```
 2. Navigate to the project directory:
    ```bash
@@ -63,6 +65,10 @@ This project is a web-based application for managing and viewing movies. It allo
 3. Install dependencies:
    ```bash
    npm install
+   ```
+4. Install necessary npm modules for the project:
+   ```bash
+   npm install express mongoose ejs express-session
    ```
 
 ### Configuration
@@ -94,4 +100,3 @@ Access the application at `http://localhost:8080`.
 2. Search for movies by title or browse the available options.
 
 ---
-
