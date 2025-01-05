@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Submission Form</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #ffffff;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: #1e1e1e;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+        }
+
+        .navbar a, .navbar button {
+            color: #ffffff;
+            background-color: #00d4ff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .navbar a:hover, .navbar button:hover {
+            background-color: #00a3cc;
+            transform: scale(1.05);
+        }
+
+        .video-form {
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid #00d4ff;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 20px;
+            padding: 30px 20px;
+            width: 400px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .video-form h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #00d4ff;
+        }
+
+        .video-form label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+            text-align: left;
+            color: #ffea00;
+        }
+
+        .video-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            color: #000000;
+            font-size: 14px;
+            outline: none;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .video-form input:focus {
+            background: rgba(255, 255, 255, 1);
+            transform: scale(1.02);
+        }
+
+        .video-form button {
+            width: 100%;
+            padding: 12px 0;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .video-form button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 198, 255, 0.5);
+        }
+
+        /* Styling for the logout form */
+        .logout-form button {
+            cursor: pointer;
+            color: #ffffff;
+            background-color: #00d4ff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            line-height: 20px;
+            text-align: center;
+            display: inline-block;
+            width: auto;
+            height: auto;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-sizing: border-box;
+        }
+
+        .logout-form button:hover {
+            background-color: #00a3cc;
+            transform: scale(1.05);
+        }
+
+        .logout-form button:focus {
+            outline: none;
+        }
+
+    </style>
+
+    <script>
+        function validateForm(event) {
+            const inputs = document.querySelectorAll('.video-form input[required]');
+            for (let input of inputs) {
+                if (!input.value) {
+                    alert(`Please fill in the ${input.name} field.`);
+                    input.focus();
+                    event.preventDefault();
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/admin/view">View All Movies</a>
+        <form class="logout-form" action="/logout" method="GET">
+            <button type="submit">Logout</button>
+        </form>
+    </div>
+    
+    <form class="video-form" action="/admin" method="post" onsubmit="return validateForm(event)">
+        <h2>Submit a New Movie</h2>
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" placeholder="Enter video title" required>
+        
+        <label for="description">Description</label>
+        <input type="text" id="description" name="description" placeholder="Enter video description" required>
+        
+        <label for="url">URL</label>
+        <input type="url" id="url" name="url" placeholder="Enter video URL" required>
+        
+        <label for="duration">Duration (in minutes)</label>
+        <input type="number" id="duration" name="duration" placeholder="Enter duration" required>
+        
+        <label for="views">Views</label>
+        <input type="number" id="views" name="views" value="0">
+        
+        <label for="likes">Likes</label>
+        <input type="number" id="likes" name="likes" value="0">
+        
+        <label for="dislikes">Dislikes</label>
+        <input type="number" id="dislikes" name="dislikes" value="0">
+        
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+
+<!-- tinyurl.com/kmitsdc1 -->

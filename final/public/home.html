@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cine Pixel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="icon" type="image/x-icon" href="/favicon.ico">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
+        
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #00d4ff;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .video-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        video {
+            border: 2px solid #00d4ff;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            max-width: 100%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #e0e0e0;
+        }
+
+        p strong {
+            color: #ffea00;
+        }
+
+        .navbar-brand {
+            color: #00d4ff !important;
+            font-weight: bold;
+        }
+
+        .navbar-nav .nav-link {
+            color: #e0e0e0;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #00d4ff;
+        }
+
+        .navbar-nav .dropdown-menu {
+            background-color: #1e1e1e;
+            border: 1px solid #3e3e3e;
+        }
+
+        .navbar-nav .dropdown-item {
+            color: #e0e0e0;
+        }
+
+        .navbar-nav .dropdown-item:hover {
+            background-color: #00d4ff;
+            color: #121212;
+        }
+
+        .navbar-nav .dropdown-toggle {
+            color: #e0e0e0;
+        }
+
+        .navbar-nav .dropdown-toggle:hover {
+            color: #00d4ff;
+        }
+
+        .navbar-toggler-icon {
+            background-color: #ffffff;
+        }
+
+        .form-control {
+            background-color: #1e1e1e;
+            color: #ffffff;
+            border: 1px solid #3e3e3e;
+        }
+
+        .form-control::placeholder {
+            color: #9e9e9e;
+        }
+
+        .form-control:focus {
+            background-color: #2e2e2e;
+            color: #ffffff;
+            outline: none;
+            border-color: #00d4ff;
+            box-shadow: 0 0 5px #00d4ff;
+        }
+
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #1e1e1e;
+            color: #9e9e9e;
+            text-align: center;
+        }
+
+        footer a {
+            color: #00d4ff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+
+        .card-img-top {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .col a {
+            text-decoration: none !important;
+        }
+
+        .card-body .card-text {
+            text-decoration: none !important;
+        }
+
+        .col a:hover {
+            text-decoration: none !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body " data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Cine Pixel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="/sub" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Telugu
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/sub">2024</a></li>
+                            <li><a class="dropdown-item" href="/sub">2023</a></li>
+                            <li><a class="dropdown-item" href="/sub">2022</a></li>
+                            <li><a class="dropdown-item" href="/sub">2021</a></li>
+                            <li><a class="dropdown-item" href="/sub">2020</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="/sub" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Hindi
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/sub">2024</a></li>
+                            <li><a class="dropdown-item" href="/sub">2023</a></li>
+                            <li><a class="dropdown-item" href="/sub">2022</a></li>
+                            <li><a class="dropdown-item" href="/sub">2021</a></li>
+                            <li><a class="dropdown-item" href="/sub">2020</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="/sub" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            English
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/sub">Avatar</a></li>
+                            <li><a class="dropdown-item" href="/sub">Avengers</a></li>
+                            <li><a class="dropdown-item" href="/sub">Spider-Man</a></li>
+                            <li><a class="dropdown-item" href="/sub">Joker</a></li>
+                            <li><a class="dropdown-item" href="/sub">Top Gun: Maverick</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="/sub" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Webseries
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/sub">Game of Thrones</a></li>
+                            <li><a class="dropdown-item" href="/sub">Breaking Bad</a></li>
+                            <li><a class="dropdown-item" href="/sub">Stranger Things</a></li>
+                            <li><a class="dropdown-item" href="/sub">Friends</a></li>
+                            <li><a class="dropdown-item" href="/sub">The Walking Dead</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="/sub" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Cartoons
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/sub">Doraemon</a></li>
+                            <li><a class="dropdown-item" href="/sub">Shinchan</a></li>
+                            <li><a class="dropdown-item" href="/sub">Tom And Jerry</a></li>
+                            <li><a class="dropdown-item" href="/sub">Chhota Bheem</a></li>
+                            <li><a class="dropdown-item" href="/sub">Motu Patlu</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="/sub" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Anime
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/sub">One Piece</a></li>
+                            <li><a class="dropdown-item" href="/sub">Demon Slayer</a></li>
+                            <li><a class="dropdown-item" href="/sub">Naruto</a></li>
+                            <li><a class="dropdown-item" href="/sub">Attack on Titan</a></li>
+                            <li><a class="dropdown-item" href="/sub">Jujutsu Kaisen</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search" action="/uploads" method="get">
+                    <input class="form-control me-2" type="search" name="title" placeholder="Search"
+                        aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+    <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <a href="/sub">
+                    <img src="https://media.mpcvfx.com/app/uploads/2022/06/RRR.jpg" class="d-block w-100" alt="rrr">
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="/sub">
+                    <img src="https://4kwallpapers.com/images/walls/thumbs_2t/7009.jpg" class="d-block w-100"
+                        alt="pushpa 2">
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="/sub">
+                    <img src="https://origin-staticv2.sonyliv.com/0/bahubali_2_12dec_landscape_thumb.jpg"
+                        class="d-block w-100" alt="bahubali_2">
+                </a>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- ____________________________________________________________________________________________________ -->
+
+    <div class="container my-4">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+            <div class="col">
+                <a href="/sub">
+                    <div class="card bg-dark border-0 text-center">
+                        <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p23430101_p_v8_aa.jpg"
+                            class="card-img-top" alt="image">
+                        <div class="card-body">
+                            <p class="card-text">HIT 2</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="/sub">
+                    <div class="card bg-dark border-0 text-center">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvXXsTx44Ja4MIiEjGp2kyMao7P6D5NTUygQ&s"
+                            class="card-img-top" alt="image">
+                        <div class="card-body">
+                            <p class="card-text">Pushpa</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="/sub">
+                    <div class="card bg-dark border-0 text-center">
+                        <img src="https://m.media-amazon.com/images/M/MV5BYzI0NTdhMmUtODRjMy00MTY5LWFkNjAtNTM2MWI4MjRjYzZiXkEyXkFqcGc@._V1_QL75_UX480_.jpg"
+                            class="card-img-top" alt="image">
+                        <div class="card-body">
+                            <p class="card-text">Goodachari</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="/sub">
+                    <div class="card bg-dark border-0 text-center">
+                        <img src="https://resizing.flixster.com/jkGyS9n4FxB82MA38gZ7qCm8BOc=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p15215076_p_v10_aa.jpg"
+                            class="card-img-top" alt="image">
+                        <div class="card-body">
+                            <p class="card-text">Rangasthalam</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="/sub">
+                    <div class="card bg-dark border-0 text-center">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqHmmrsQJEokHZ0vHZJhNpBRvlqQEnJBkS8A&s"
+                            class="card-img-top" alt="image">
+                        <div class="card-body">
+                            <p class="card-text">Mathu Vadalara</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="/sub">
+                    <div class="card bg-dark border-0 text-center">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLMCyncsslssHXWY7zSn2vLE76jx6w_kARdg&s"
+                            class="card-img-top" alt="image">
+                        <div class="card-body">
+                            <p class="card-text">Mr. Bachchan</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="/sub">
+                    <div class="card bg-dark border-0 text-center">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQckBBriYcWVn2emte79nZHO1h-EM376o3JDg&s"
+                            class="card-img-top" alt="image">
+                        <div class="card-body">
+                            <p class="card-text">Hanu-Man</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="/sub">
+                    <div class="card bg-dark border-0 text-center">
+                        <img src="https://th-i.thgim.com/public/entertainment/movies/i2psbs/article25190856.ece/alternates/FREE_1200/NTR---Aravinda-Sametha"
+                            class="card-img-top" alt="image">
+                        <div class="card-body">
+                            <p class="card-text">Aravinda Sametha Veera Raghava</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="/sub">
+                    <div class="card bg-dark border-0 text-center">
+                        <img src="https://m.media-amazon.com/images/M/MV5BMmNkNmI2MzQtY2Q0My00MDVhLTg2ZTktNTk5ZjgyOWEzZjQ3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+                            class="card-img-top" alt="image">
+                        <div class="card-body">
+                            <p class="card-text">Bharat Ane Nenu</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="/sub">
+                    <div class="card bg-dark border-0 text-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/e/ee/Athadu_Poster.jpg" class="card-img-top"
+                            alt="image">
+                        <div class="card-body">
+                            <p class="card-text">Athadu</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="/sub">
+                    <div class="card bg-dark border-0 text-center">
+                        <img src="https://resizing.flixster.com/Pqi5P6v8Vu_hAAh3O9edOTpM7H0=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzkzODFmYWI3LTA0OTAtNGZmNy05NGI5LWYzMGUxY2M0NDhkMC5qcGc="
+                            class="card-img-top" alt="image">
+                        <div class="card-body">
+                            <p class="card-text">Brahmāstra: Part One - Shiva</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="/sub">
+                    <div class="card bg-dark border-0 text-center">
+                        <img src="https://m.media-amazon.com/images/M/MV5BMWJlYjYyZTktYWVkOC00ZjEyLTk3MWUtYjAwMWRkYTcyZmM1XkEyXkFqcGc@._V1_.jpg"
+                            class="card-img-top" alt="image">
+                        <div class="card-body">
+                            <p class="card-text">Shyam Singha Roy</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="/sub">
+                    <div class="card bg-dark border-0 text-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/3/3a/Nannaku_Prematho_poster.jpg"
+                            class="card-img-top" alt="image">
+                        <div class="card-body">
+                            <p class="card-text">Nannaku Prematho</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="/sub">
+                    <div class="card bg-dark border-0 text-center">
+                        <img src="https://static.toiimg.com/photo/90811451.cms?imgsize=16080" class="card-img-top"
+                            alt="image">
+                        <div class="card-body">
+                            <p class="card-text">Beast</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="/sub">
+                    <div class="card bg-dark border-0 text-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/c/c3/Ponniyin_Selvan_I.jpg"
+                            class="card-img-top" alt="image">
+                        <div class="card-body">
+                            <p class="card-text">PS 1</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="/sub">
+                    <div class="card bg-dark border-0 text-center">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2gsD8vROupT2yS3Ds0-m3lcYI0lah9JenZA&s"
+                            class="card-img-top" alt="image">
+                        <div class="card-body">
+                            <p class="card-text">Liger</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="/sub">
+                    <div class="card bg-dark border-0 text-center">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1_seBZhNdl1I9eswYs5UXDuJKXlU8kPzXig&s"
+                            class="card-img-top" alt="image">
+                        <div class="card-body">
+                            <p class="card-text">KGF</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="/sub">
+                    <div class="card bg-dark border-0 text-center">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_VLKWXuKNLuVnIxx3KVUL1bFHi0oo-OKHhA&s"
+                            class="card-img-top" alt="image">
+                        <div class="card-body">
+                            <p class="card-text">PK</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="/sub">
+                    <div class="card bg-dark border-0 text-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/b/b6/Ram-Setu.jpeg" class="card-img-top"
+                            alt="image">
+                        <div class="card-body">
+                            <p class="card-text">Ram Setu</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="/sub">
+                    <div class="card bg-dark border-0 text-center">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ4LcIWcO2zY0VMaJuqLcPm-8Kh0gKbHFyiw&s"
+                            class="card-img-top" alt="image">
+                        <div class="card-body">
+                            <p class="card-text">Bheeshma</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer>
+        <p>&copy; 2024 CinePixel. Created with passion.</p>
+    </footer>
+    
+
+
+
+</body>
+
+</html>

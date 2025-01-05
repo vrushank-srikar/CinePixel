@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Failed</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Blue-black gradient */
+            color: #ffffff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #ffea00; /* Yellow */
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+
+        button {
+            background-color: #00d4ff; /* Blue */
+            color: #121212;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        button:hover {
+            background-color: #00a3cc; /* Darker blue */
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 198, 255, 0.5);
+        }
+
+        form {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Login Failed</h1>
+    <p><%= message %></p>
+    <form action="/login" method="GET">
+        <button type="submit">Try Again</button>
+    </form>
+</body>
+</html>

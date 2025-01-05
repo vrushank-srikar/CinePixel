@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Streaming Subscription</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+        }
+        .back-btn {
+            position: fixed;
+            left: 20px;
+            top: 20px;
+            font-size: 1em;
+            color: #e0e0e0;
+            background-color: #e74c3c;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            z-index: 100; 
+        }
+        .back-btn:hover {
+            background-color: #c0392b;
+        }
+
+        h1 {
+            text-align: center;
+            color: #f1f1f1;
+            margin-top: 20px;
+            position: relative;
+        }
+        p {
+            text-align: center;
+            font-size: 1.2em;
+            margin-top: 20px;
+            color: #ccc;
+        }
+        .subscription-box {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 900px;
+            text-align: center;
+            border-radius: 8px;
+        }
+        .subscription-box h3 {
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            color: #fff;
+        }
+        .plans {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .plan {
+            background-color: #2c2c2c;
+            padding: 20px;
+            border: 1px solid #444;
+            width: 43%;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .plan h4 {
+            color: #f1f1f1;
+            margin-bottom: 15px;
+        }
+        .plan p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            color: #ccc;
+        }
+        .plan .price {
+            font-size: 1.4em;
+            color: #e74c3c;
+        }
+        .buy-now-btn {
+            background-color: #27ae60;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+        .buy-now-btn:hover {
+            background-color: #2ecc71;
+        }
+
+        @media (max-width: 768px) {
+            .plan {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="/" class="back-btn"> Back to Home</a>
+
+    <h1>Welcome to Unlimited Movie Streaming!</h1>
+    <p>Unlock a world of entertainment with unlimited access to all movies! Whether you're in the mood for the latest blockbusters, timeless classics, or hidden gems, we’ve got it all. Watch your favorites anytime, anywhere, with no restrictions. Subscribe now and enjoy endless hours of premium content!</p>
+
+    <div class="subscription-box">
+        <h3>Subscription Plans</h3>
+        <div class="plans">
+            <div class="plan">
+                <h4>Full Subscription (Yearly)</h4>
+                <p>₹999 for unlimited access to all movies. Enjoy all content without any restrictions for an entire year!</p>
+                <p class="price">₹999/year</p>
+                <button class="buy-now-btn">Buy Now</button>
+            </div>
+
+            <div class="plan">
+                <h4>Monthly Subscription</h4>
+                <p>₹199 per month. Enjoy continuous access to our vast movie library, cancel anytime, with no hidden fees.</p>
+                <p class="price">₹199/month</p>
+                <button class="buy-now-btn">Buy Now</button>
+            </div>
+        </div>
+    </div>
+
+    <p>Sign up now and experience the best in entertainment!</p>
+</body>
+</html>
